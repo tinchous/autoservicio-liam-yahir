@@ -1,76 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pedido - AutoService Liam Yahir</title>
-  <link rel="stylesheet" href="css/styles.css"><link rel="stylesheet" href="css/halloween.css">
-  <script src="js/cart.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido | Autoservice Liam-Yahir</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/neon.css">
 </head>
-<header>
-  <div class="container">
-    <img src="images/logo-header.png" alt="AutoService Liam & Yahir" class="logo">
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="products.html">Productos</a></li>
-        <li><a href="dashboard.html">Mi Cuenta</a></li>
-        <li><a href="delivery.html">Delivery</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-
 <body>
-  <div class="container pedido">
-    <h1>🧾 Pedido Delivery</h1>
-    <p>Revisá tu pedido antes de enviarlo al WhatsApp.</p>
-    <div class="pedido-form">
-      <label>Nombre</label><input id="nombre"/>
-      <label>Teléfono</label><input id="telefono"/>
-      <label>Dirección</label><input id="direccion"/>
-      <label>Forma de pago</label>
-      <select id="pago"><option>POS</option><option>Efectivo</option></select>
-      <label>Notas</label><textarea id="notas"></textarea>
-      <button class="cta-button" onclick="previewOrder()">🧾 Ver pedido</button>
-    </div>
-  </div>
-  <div id="modal-pedido" class="modal">
-    <div class="modal-content">
-      <h2>Vista previa del pedido</h2>
-      <div id="pedido-preview"></div>
-      <button onclick="sendFinalOrder()">📲 Enviar por WhatsApp</button>
-      <button onclick="closeModal()">❌ Cerrar</button>
-    </div>
-  </div>
-  <script>
-    function previewOrder(){
-      const user={nombre:nombre.value,telefono:telefono.value,direccion:direccion.value,pago:pago.value,notas:notas.value};
-      const cart=getCart(); if(!cart.length)return alert("Tu carrito está vacío");
-      const total=cartTotal(cart),del=deliveryCost(total);
-      const html=`<p><b>${user.nombre}</b> - ${user.telefono}<br>${user.direccion}</p>
-      <hr><ul>${cart.map(p=>`<li>${p.qty} x ${p.nombre} - $${p.qty*p.precio}</li>`).join("")}</ul>
-      <p><b>Subtotal:</b> $${total} | <b>Delivery:</b> $${del} | <b>Total:</b> $${total+del}</p>`;
-      pedido-preview.innerHTML=html; modal-pedido.style.display="flex";
-    }
-    function sendFinalOrder(){
-      const u={nombre:nombre.value,telefono:telefono.value,direccion:direccion.value,pago:pago.value,notas:notas.value};
-      sendOrderWhatsApp(u); closeModal();
-    }
-    function closeModal(){ modal-pedido.style.display="none"; }
-  </script>
-<footer>
-  <h3>AutoService Liam & Yahir</h3>
-  <p>📍 Alejandro Fiol de Pereda 1251, Montevideo, Reducto, 11800, Uruguay</p>
-  <p>🕓 Abierto 24/7 (excepto martes 00:00 - 08:00) <br> 🚚 Delivery: 08:00 a 23:30</p>
-  <p>📱 WhatsApp: <a href="https://wa.me/59892308828" target="_blank">+598 9230 8828</a></p>
-  <div class="social">
-    <a href="https://facebook.com/" target="_blank"><img src="images/icons/facebook.png" alt="Facebook"></a>
-    <a href="https://instagram.com/" target="_blank"><img src="images/icons/instagram.png" alt="Instagram"></a>
-    <a href="https://wa.me/59892308828" target="_blank"><img src="images/icons/whatsapp.png" alt="WhatsApp"></a>
-  </div>
-  <small><a href="#">Términos y Condiciones</a> · <a href="#">Privacidad</a> · <a href="#">Cookies</a></small>
-</footer>
+  <header>
+    <img src="images/logo.png" alt="Autoservice Liam-Yahir" class="logo">
+  </header>
 
+  <main class="pedido-form">
+    <h2>🧾 Finalizar Pedido</h2>
+    <form id="form-pedido">
+      <input id="nombre" placeholder="Tu nombre" required>
+      <input id="email" type="email" placeholder="Tu correo" required>
+      <input id="direccion" placeholder="Dirección de entrega" required>
+      <button type="submit" class="neon-btn">Enviar pedido</button>
+    </form>
+  </main>
+
+  <script type="module" src="js/pedido.js"></script>
 </body>
 </html>
