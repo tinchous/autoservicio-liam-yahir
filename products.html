@@ -1,8 +1,44 @@
-<section id="categorias" class="categorias"></section>
-<section id="productos" class="grid"></section>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos | Autoservice Liam-Yahir</title>
 
-<script type="module">
-  import { renderCategorias } from "./js/data.js";
-  import "./js/cart.js";
-  renderCategorias();
-</script>
+  <!-- ✅ Estilos principales -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/neon.css">
+</head>
+
+<body>
+  <!-- 🚀 Banner superior con efecto neón -->
+  <header class="banner-neon">
+    <div class="banner-content">
+      <!-- 🏪 Logo principal -->
+      <img src="images/logo.png" alt="Autoservice Liam-Yahir" class="banner-logo">
+
+      <!-- ✨ Nombre del autoservicio con texto neón -->
+      <h1>Autoservice Liam-Yahir</h1>
+
+      <!-- 💡 Subtítulo animado tipo cartel luminoso -->
+      <p class="delivery">24/7 Delivery</p>
+    </div>
+  </header>
+
+  <!-- 💰 Catálogo de productos -->
+  <main>
+    <section id="categorias" class="categorias"></section>
+    <section id="productos" class="grid"></section>
+
+    <!-- 🛒 Carrito flotante -->
+    <div id="carrito"></div>
+  </main>
+
+  <!-- 📦 Scripts para carga dinámica -->
+  <script type="module">
+    import { renderCategorias } from "./js/data.js";
+    import "./js/cart.js";
+    renderCategorias();
+  </script>
+</body>
+</html>
