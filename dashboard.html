@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Cuenta - AutoService Liam & Yahir</title>
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/layout.css">
+<script src="js/config.js"></script>
+<script src="js/users.js"></script>
+</head>
+<body>
+<header>
+  <div class="container">
+    <img src="images/logo-header.png" alt="AutoService Liam & Yahir" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="products.html">Productos</a></li>
+        <li><a href="dashboard.html" class="active">Mi Cuenta</a></li>
+        <li><a href="delivery.html">Delivery</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>👤 Mi Cuenta</h1>
+  <div id="user-info"></div>
+</main>
+
+<footer>
+  <p>© 2025 AutoService Liam & Yahir</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const user = getActiveUser();
+  const div = document.getElementById('user-info');
+  if (!user) {
+    div.innerHTML = '<p>Debes iniciar sesión para ver tu perfil.</p>';
+    return;
+  }
+  div.innerHTML = `
+    <h3>${user.nombre}</h3>
+    <p><b>Email:</b> ${user.email}</p>
+    <p><b>Teléfono:</b> ${user.telefono}</p>
+    <p><b>Dirección:</b> ${user.direccion}</p>
+    <p><b>Registrado:</b> ${user.fechaRegistro}</p>
+    <button onclick="logoutUser()">Cerrar sesión</button>
+  `;
+});
+</script>
+</body>
+</html>
