@@ -3,32 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Autoservice Liam-Yahir 24/7</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Autoservice Liam-Yahir | Inicio</title>
   <link rel="stylesheet" href="css/neon.css">
 </head>
-<header class="header-bar">
-  <div class="logo-area">
-    <img src="images/logo.png" alt="Autoservice Liam-Yahir" class="logo-mini">
-    <h1>Autoservice <span>Liam-Yahir</span></h1>
-  </div>
-  <nav class="nav-menu">
-    <a href="index.html">Inicio</a>
-    <a href="products.html" class="activo">Catálogo</a>
-    <a href="delivery.html">Delivery</a>
-    <a href="nosotros.html">Nosotros</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="login.html" class="login-link">Ingresar / Registrar</a>
-  </nav>
-</header>
 
-<body class="inicio">
-  <div class="overlay">
-    <img src="images/logo.png" class="logo-grande" alt="Liam-Yahir">
-    <h1 class="neon-text">Autoservice<br><span>Liam-Yahir</span><br><small>24/7 Delivery</small></h1>
-    <a href="products.html" class="neon-btn">Entrar al Catálogo</a>
-  </div>
-<script src="js/efecto-luces.js"></script>
+<body>
+  <!-- 🔥 HEADER REUTILIZADO -->
+  <header class="header-bar">
+    <div class="logo-area">
+      <img src="images/logo.png" alt="Autoservice Liam-Yahir" class="logo-mini">
+      <h1>Autoservice <span>Liam-Yahir</span></h1>
+    </div>
+    <nav class="nav-menu">
+      <a href="index.html" class="activo">Inicio</a>
+      <a href="products.html">Catálogo</a>
+      <a href="delivery.html">Delivery</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="login.html" class="login-link">Ingresar / Registrar</a>
+    </nav>
+  </header>
+
+  <!-- 🏪 SECCIÓN DESTACADA -->
+  <section class="banner-destacado">
+    <div class="banner">
+      <h2>🔥 Rotisería Caliente</h2>
+      <p>Pollo al horno, milanesas, tartas y más todos los días.</p>
+    </div>
+    <div class="banner">
+      <h2>🍎 Frutas & Verduras</h2>
+      <p>Frescura natural todos los días, directo del productor.</p>
+    </div>
+    <div class="banner">
+      <h2>🚚 Delivery 08:00 a 23:30</h2>
+      <p>Por solo <strong>$50</strong> – Compras mayores a <strong>$1500</strong> envío <span class="gratis">GRATIS</span>.</p>
+    </div>
+  </section>
+
+  <!-- 🛍️ SECCIÓN DE PRODUCTOS DESTACADOS -->
+  <main class="productos-destacados">
+    <h2>Productos Destacados</h2>
+    <div class="grid">
+      <!-- 🧀 Ejemplo de producto -->
+      <div class="producto">
+        <div class="categoria">LÁCTEOS</div>
+        <img src="images/products/1152070-500-auto" alt="Leche entera">
+        <h3>Leche Entera Conaprole 1L</h3>
+        <p class="precio">$48</p>
+        <div class="cantidad">
+          <button>-</button>
+          <input type="number" value="1" min="1">
+          <button>+</button>
+        </div>
+        <button class="btn-agregar">Agregar al Carrito</button>
+      </div>
+
+      <div class="producto">
+        <div class="categoria">FRUTAS</div>
+        <img src="images/products/manzana.png" alt="Manzana Roja">
+        <h3>Manzana Roja</h3>
+        <p class="precio">$98 / Kg</p>
+        <div class="cantidad">
+          <button>-</button>
+          <input type="number" value="1" min="1">
+          <button>+</button>
+        </div>
+        <button class="btn-agregar">Agregar al Carrito</button>
+      </div>
+
+      <div class="producto">
+        <div class="categoria">ROTISERÍA</div>
+        <img src="images/products/pollo.png" alt="Pollo al Horno">
+        <h3>Pollo al Horno</h3>
+        <p class="precio">$390</p>
+        <div class="cantidad">
+          <button>-</button>
+          <input type="number" value="1" min="1">
+          <button>+</button>
+        </div>
+        <button class="btn-agregar">Agregar al Carrito</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- 💬 WHATSAPP FLOTANTE -->
+  <a href="https://wa.me/59892308828" class="whatsapp-float" target="_blank">
+    <img src="images/icons/whatsapp-icon.png" alt="WhatsApp">
+  </a>
+
+  <!-- ⚙️ FOOTER -->
+  <footer class="footer-neon">
+    <p>© 2025 Autoservice Liam-Yahir · Montevideo · Delivery 24/7</p>
+  </footer>
+
+  <!-- ✨ EFECTO DE LUZ -->
+  <script src="js/efecto-luces.js"></script>
+<script type="module" src="js/carrito-animado.js"></script>
 
 </body>
 </html>
