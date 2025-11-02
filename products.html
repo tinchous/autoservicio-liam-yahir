@@ -1,64 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Productos | Autoservice Liam-Yahir</title>
-
-  <!-- ✅ Estilos principales -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/neon.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo | Autoservice Liam-Yahir</title>
+  <link rel="stylesheet" href="css/neon.css" />
 </head>
-<header class="header-bar">
-  <div class="logo-area">
-    <img src="images/logo.png" alt="Autoservice Liam-Yahir" class="logo-mini">
-    <h1>Autoservice <span>Liam-Yahir</span></h1>
-  </div>
-  <nav class="nav-menu">
-    <a href="index.html">Inicio</a>
-    <a href="products.html" class="activo">Catálogo</a>
-    <a href="delivery.html">Delivery</a>
-    <a href="nosotros.html">Nosotros</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="login.html" class="login-link">Ingresar / Registrar</a>
-  </nav>
-</header>
-
 
 <body>
-  <!-- 🚀 Banner superior con efecto neón -->
-  <header class="banner-neon">
-    <div class="banner-content">
-      <!-- 🏪 Logo principal -->
-      <img src="images/logo.png" alt="Autoservice Liam-Yahir" class="banner-logo">
-
-      <!-- ✨ Nombre del autoservicio con texto neón -->
-      <h1>Autoservice Liam-Yahir</h1>
-
-      <!-- 💡 Subtítulo animado tipo cartel luminoso -->
-      <p class="delivery">24/7 Delivery</p>
+  <header class="header-bar">
+    <div class="logo-area">
+      <img src="images/logo.png" alt="Autoservice Liam-Yahir" class="logo-mini" />
+      <h1>Autoservice <span>Liam-Yahir</span></h1>
     </div>
+    <nav class="nav-menu">
+      <a href="index.html">Inicio</a>
+      <a href="products.html" class="activo">Catálogo</a>
+      <a href="delivery.html">Delivery</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="login.html" class="login-link">Ingresar / Registrar</a>
+    </nav>
   </header>
 
-  <!-- 💰 Catálogo de productos -->
-  <main>
-    <section id="categorias" class="categorias"></section>
-    <section id="productos" class="grid"></section>
-
-    <!-- 🛒 Carrito flotante -->
-    <div id="carrito"></div>
+  <main class="productos-destacados">
+    <h2>Catálogo Completo</h2>
+    <div class="grid" id="productos-lista">
+      <!-- productos cargados desde JS -->
+    </div>
   </main>
 
-  <!-- 📦 Scripts para carga dinámica -->
-  <script type="module">
-    import { renderCategorias } from "./js/data.js";
-    import "./js/cart.js";
-    renderCategorias();
-  </script>
-<script type="module" src="js/carrito-animado.js"></script>
-<script src="js/efecto-luces.js"></script>
+  <footer class="footer-neon">
+    <p>© 2025 Autoservice Liam-Yahir · Todos los derechos reservados</p>
+  </footer>
 
-
-
+  <script src="js/main.js"></script>
 </body>
 </html>

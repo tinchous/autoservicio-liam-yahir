@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Autoservice Liam-Yahir | Inicio</title>
-  <link rel="stylesheet" href="css/neon.css">
+  <link rel="stylesheet" href="css/neon.css" />
 </head>
 
 <body>
-  <!-- 🔥 HEADER REUTILIZADO -->
+  <!-- HEADER GLOBAL -->
   <header class="header-bar">
     <div class="logo-area">
-      <img src="images/logo.png" alt="Autoservice Liam-Yahir" class="logo-mini">
+      <img src="images/logo.png" alt="Autoservice Liam-Yahir" class="logo-mini" />
       <h1>Autoservice <span>Liam-Yahir</span></h1>
     </div>
     <nav class="nav-menu">
@@ -24,81 +24,56 @@
     </nav>
   </header>
 
-  <!-- 🏪 SECCIÓN DESTACADA -->
+  <!-- SECCIONES DESTACADAS -->
   <section class="banner-destacado">
     <div class="banner">
       <h2>🔥 Rotisería Caliente</h2>
-      <p>Pollo al horno, milanesas, tartas y más todos los días.</p>
+      <p>Milanesas, Empanadas y Tartas todos los días.</p>
     </div>
     <div class="banner">
       <h2>🍎 Frutas & Verduras</h2>
-      <p>Frescura natural todos los días, directo del productor.</p>
+      <p>Frescura natural directo del productor.</p>
     </div>
     <div class="banner">
-      <h2>🚚 Delivery 08:00 a 23:30</h2>
-      <p>Por solo <strong>$50</strong> – Compras mayores a <strong>$1500</strong> envío <span class="gratis">GRATIS</span>.</p>
+      <h2>🚚 Delivery</h2>
+      <p>De 08:00 a 23:30 — $50 o GRATIS por compras mayores a $1500.</p>
     </div>
   </section>
 
-  <!-- 🛍️ SECCIÓN DE PRODUCTOS DESTACADOS -->
+  <!-- DESTACADOS -->
   <main class="productos-destacados">
     <h2>Productos Destacados</h2>
     <div class="grid">
-      <!-- 🧀 Ejemplo de producto -->
-      <div class="producto">
-        <div class="categoria">LÁCTEOS</div>
-        <img src="images/products/1152070-500-auto" alt="Leche entera">
-        <h3>Leche Entera Conaprole 1L</h3>
-        <p class="precio">$48</p>
-        <div class="cantidad">
-          <button>-</button>
-          <input type="number" value="1" min="1">
-          <button>+</button>
-        </div>
-        <button class="btn-agregar">Agregar al Carrito</button>
-      </div>
-
-      <div class="producto">
-        <div class="categoria">FRUTAS</div>
-        <img src="images/products/manzana.png" alt="Manzana Roja">
-        <h3>Manzana Roja</h3>
-        <p class="precio">$98 / Kg</p>
-        <div class="cantidad">
-          <button>-</button>
-          <input type="number" value="1" min="1">
-          <button>+</button>
-        </div>
-        <button class="btn-agregar">Agregar al Carrito</button>
-      </div>
-
       <div class="producto">
         <div class="categoria">ROTISERÍA</div>
-        <img src="images/products/pollo.png" alt="Pollo al Horno">
+        <img src="images/products/pollo.png" alt="Pollo al horno" />
         <h3>Pollo al Horno</h3>
         <p class="precio">$390</p>
-        <div class="cantidad">
-          <button>-</button>
-          <input type="number" value="1" min="1">
-          <button>+</button>
-        </div>
-        <button class="btn-agregar">Agregar al Carrito</button>
+        <button class="btn-agregar">Ver más</button>
+      </div>
+      <div class="producto">
+        <div class="categoria">FRUTAS</div>
+        <img src="images/products/manzana.png" alt="Manzana Roja" />
+        <h3>Manzana Roja</h3>
+        <p class="precio">$98 / Kg</p>
+        <button class="btn-agregar">Ver más</button>
+      </div>
+      <div class="producto">
+        <div class="categoria">LÁCTEOS</div>
+        <img src="images/products/leche.png" alt="Leche Entera" />
+        <h3>Leche Entera 1L</h3>
+        <p class="precio">$48</p>
+        <button class="btn-agregar">Ver más</button>
       </div>
     </div>
   </main>
 
-  <!-- 💬 WHATSAPP FLOTANTE -->
-  <a href="https://wa.me/59892308828" class="whatsapp-float" target="_blank">
-    <img src="images/icons/whatsapp-icon.png" alt="WhatsApp">
-  </a>
-
-  <!-- ⚙️ FOOTER -->
+  <!-- FOOTER -->
   <footer class="footer-neon">
-    <p>© 2025 Autoservice Liam-Yahir · Montevideo · Delivery 24/7</p>
+    <p>© 2025 Autoservice Liam-Yahir · Montevideo · Delivery 08:00-23:30</p>
+    <p>📍 Alejandro Fiol de Pereda 1251 | 📞 <a href="tel:+59892308828">92308828</a></p>
   </footer>
 
-  <!-- ✨ EFECTO DE LUZ -->
-  <script src="js/efecto-luces.js"></script>
-<script type="module" src="js/carrito-animado.js"></script>
-
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ingresar / Registrar | Liam-Yahir</title>
+  <link rel="stylesheet" href="css/neon.css">
+</head>
+<body>
+  <header class="header-bar">
+    <div class="logo-area"><img src="images/logo.png" class="logo-mini" alt="logo"><h1>Autoservice <span>Liam-Yahir</span></h1></div>
+    <nav class="nav-menu"><a href="index.html">Inicio</a><a href="products.html">Catálogo</a><a href="login.html" class="activo">Ingresar</a></nav>
+  </header>
+
+  <main style="padding:22px;">
+    <div style="max-width:420px;margin:8px auto;background:rgba(0,0,0,0.6);padding:18px;border-radius:12px;border:1px solid #ff3b3b;">
+      <h2 style="color:#ff8c00">Ingresar</h2>
+      <form id="login-form">
+        <input id="email" type="email" placeholder="Email" required style="width:100%;padding:10px;border-radius:8px;border:none;margin:6px 0;background:rgba(255,255,255,0.03);color:#fff;">
+        <input id="pass" type="password" placeholder="Contraseña" required style="width:100%;padding:10px;border-radius:8px;border:none;margin:6px 0;background:rgba(255,255,255,0.03);color:#fff;">
+        <button class="btn" style="background:#ff8c00;border:none;padding:10px 14px;border-radius:8px;color:#000;font-weight:700;margin-top:8px;">Ingresar</button>
+      </form>
+
+      <hr style="border:none;border-top:1px solid rgba(255,255,255,0.06);margin:12px 0;">
+      <h3 style="color:#ff8c00">Registro</h3>
+      <form id="register-form">
+        <input id="rname" placeholder="Nombre" required style="width:100%;padding:10px;border-radius:8px;border:none;margin:6px 0;background:rgba(255,255,255,0.03);color:#fff;">
+        <input id="remail" type="email" placeholder="Email" required style="width:100%;padding:10px;border-radius:8px;border:none;margin:6px 0;background:rgba(255,255,255,0.03);color:#fff;">
+        <input id="rpass" type="password" placeholder="Contraseña" required style="width:100%;padding:10px;border-radius:8px;border:none;margin:6px 0;background:rgba(255,255,255,0.03);color:#fff;">
+        <button class="btn" style="background:#ff00ff;border:none;padding:10px 14px;border-radius:8px;color:#000;font-weight:700;margin-top:8px;">Registrar</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer-neon"><p>© 2025 Autoservice Liam-Yahir</p></footer>
+
+  <script type="module">
+    import { registrarUsuario } from './js/users.js';
+    document.getElementById("register-form")?.addEventListener("submit", async (e)=> {
+      e.preventDefault();
+      const nombre = document.getElementById("rname").value.trim();
+      const email = document.getElementById("remail").value.trim();
+      const pass = document.getElementById("rpass").value.trim();
+      if(!nombre||!email||!pass) return alert("Completá todos los campos");
+      await registrarUsuario(nombre,email,pass);
+      alert("Registro simulado OK. (Se guardó en Sheets si la API KEY tiene permisos)");
+      e.target.reset();
+    });
+
+    document.getElementById("login-form")?.addEventListener("submit", (e)=> {
+      e.preventDefault();
+      alert("Login demo: en produccion usar OAuth / backend seguro.");
+    });
+  </script>
+  <script src="js/efecto-luces.js"></script>
+</body>
+</html>

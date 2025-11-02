@@ -1,41 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pedido | Autoservice Liam-Yahir</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Finalizar Pedido | Liam-Yahir</title>
   <link rel="stylesheet" href="css/neon.css">
 </head>
 <body>
-<header class="header-bar">
-  <div class="logo-area">
-    <img src="images/logo.png" alt="Autoservice Liam-Yahir" class="logo-mini">
-    <h1>Autoservice <span>Liam-Yahir</span></h1>
-  </div>
-  <nav class="nav-menu">
-    <a href="index.html">Inicio</a>
-    <a href="products.html" class="activo">Catálogo</a>
-    <a href="delivery.html">Delivery</a>
-    <a href="nosotros.html">Nosotros</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="login.html" class="login-link">Ingresar / Registrar</a>
-  </nav>
-</header>
+  <header class="header-bar">
+    <div class="logo-area"><img src="images/logo.png" class="logo-mini"><h1>Autoservice <span>Liam-Yahir</span></h1></div>
+    <nav class="nav-menu"><a href="index.html">Inicio</a><a href="products.html">Catálogo</a><a href="pedido.html" class="activo">Pedido</a></nav>
+  </header>
 
-
-  <main class="pedido-form">
-    <h2>🧾 Finalizar Pedido</h2>
-    <form id="form-pedido">
-      <input id="nombre" placeholder="Tu nombre" required>
-      <input id="email" type="email" placeholder="Tu correo" required>
-      <input id="direccion" placeholder="Dirección de entrega" required>
-      <button type="submit" class="neon-btn">Enviar pedido</button>
-    </form>
+  <main style="padding:20px;">
+    <div style="max-width:720px;margin:10px auto;background:rgba(0,0,0,0.7);padding:18px;border-radius:12px;">
+      <h2 style="color:#ff8c00">Finalizar Pedido</h2>
+      <form id="form-pedido">
+        <input id="nombre" placeholder="Tu nombre" required style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:none;background:rgba(255,255,255,0.03);color:#fff;">
+        <input id="email" type="email" placeholder="Tu correo" style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:none;background:rgba(255,255,255,0.03);color:#fff;">
+        <input id="direccion" placeholder="Dirección de entrega" required style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:none;background:rgba(255,255,255,0.03);color:#fff;">
+        <button type="submit" style="background:#ff8c00;border:none;padding:10px 12px;border-radius:8px;color:#000;font-weight:700;margin-top:8px;">Enviar pedido</button>
+      </form>
+    </div>
   </main>
 
-  <script type="module" src="js/pedido.js"></script>
-<script src="js/efecto-luces.js"></script>
+  <footer class="footer-neon"><p>© 2025 Autoservice Liam-Yahir</p></footer>
 
+  <script type="module" src="js/pedido.js"></script>
+  <script src="js/efecto-luces.js"></script>
 </body>
 </html>

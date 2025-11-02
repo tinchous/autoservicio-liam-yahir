@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contacto | Autoservice Liam-Yahir</title>
+  <link rel="stylesheet" href="css/neon.css">
+</head>
+<body>
+  <header class="header-bar">
+    <div class="logo-area">
+      <img src="images/logo.png" class="logo-mini" alt="logo">
+      <h1>Autoservice <span>Liam-Yahir</span></h1>
+    </div>
+    <nav class="nav-menu">
+      <a href="index.html">Inicio</a>
+      <a href="products.html">Catálogo</a>
+      <a href="delivery.html">Delivery</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html" class="activo">Contacto</a>
+      <a href="login.html" class="login-link">Ingresar / Registrar</a>
+    </nav>
+  </header>
+
+  <main class="container" style="padding:24px 12px;">
+    <h2 style="color:#ff8c00">Contacto</h2>
+    <p class="text-muted">Escribinos o llamanos y te respondemos al toque.</p>
+
+    <form id="form-contacto" style="max-width:700px;margin-top:12px;">
+      <input name="nombre" placeholder="Tu nombre" required style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:none;background:rgba(255,255,255,0.03);color:#fff;">
+      <input name="email" type="email" placeholder="Tu e-mail" style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:none;background:rgba(255,255,255,0.03);color:#fff;">
+      <textarea name="mensaje" placeholder="Tu mensaje" rows="6" style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:none;background:rgba(255,255,255,0.03);color:#fff;"></textarea>
+      <button type="submit" class="btn" style="background:#ff8c00;border:none;padding:10px 14px;border-radius:8px;color:#000;font-weight:700;">Enviar mensaje</button>
+    </form>
+  </main>
+
+  <footer class="footer-neon"><p>© 2025 Autoservice Liam-Yahir</p></footer>
+  <script src="js/efecto-luces.js"></script>
+  <script>
+    document.getElementById("form-contacto")?.addEventListener("submit", (e)=>{
+      e.preventDefault();
+      alert("¡Gracias! Tu mensaje fue enviado (simulado). En producción lo guardamos en Sheets o lo mandamos por email.");
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
