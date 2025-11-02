@@ -1,98 +1,232 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Autoservice Liam Yahir | Inicio</title>
-  <link rel="stylesheet" href="css/neon.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Autoservice Liam Yahir</title>
+  <link rel="stylesheet" href="css/main.css">
 </head>
-
 <body>
-  <!-- HEADER GLOBAL -->
-  <header class="header-bar">
-    <div class="logo-area">
-      <img src="images/logo.png" alt="Autoservice Liam-Yahir" class="logo-mini" />
-      <h1>Autoservice <span>Liam-Yahir</span></h1>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo/logo.png" alt="Autoservice Liam Yahir" class="brand-logo">
+        <span class="brand-title">Autoservice Liam Yahir</span>
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Menú principal">
+        <a href="index.html">Inicio</a>
+        <a href="products.html">CATÁLOGO</a>
+        <a href="delivery.html">Delivery</a>
+        <a href="dashboard.html" id="link-nosotros">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+        <button id="login-toggle" class="btn-link">Ingresar / Registrar</button>
+      </nav>
+
+      <div class="header-actions">
+        <button id="cart-toggle" title="Ver carrito" aria-label="Carrito" class="cart-toggle">
+          <span class="cart-icon">🛒</span>
+          <span id="cart-count" class="cart-count">0</span>
+        </button>
+        <a class="whatsapp-float" href="https://wa.me/59892308828" target="_blank" title="WhatsApp">
+          <img src="images/icons/whatsapp-icon.png" alt="WhatsApp">
+        </a>
+      </div>
     </div>
-    <nav class="nav-menu">
-      <a href="index.html" class="activo">Inicio</a>
-      <a href="products.html">Catálogo</a>
-      <a href="delivery.html">Delivery</a>
-      <a href="nosotros.html">Nosotros</a>
-      <a href="contacto.html">Contacto</a>
-      <a href="login.html" class="login-link">Ingresar / Registrar</a>
-    </nav>
   </header>
 
-  <!-- SECCIONES DESTACADAS -->
-  <!-- SECCIÓN DESTACADA (index.html) -->
-<section class="banner-destacado">
-  <a href="delivery.html" class="banner link-banner">
-    <div class="banner-inner">
-      <h2>🚚 Delivery</h2>
-      <p>08:00 a 23:30 · $50 · Compras > $1500 envío <strong>GRATIS</strong></p>
-    </div>
-  </a>
+  <!-- MOUSE LIGHT -->
+  <div id="mouse-light" aria-hidden="true"></div>
 
-  <a href="products.html?cat=ROTISERIA" class="banner link-banner">
-    <div class="banner-inner">
-      <h2>🔥 Rotisería Caliente</h2>
-      <p>Milanesas de carne y pollo, Tartas , Empanadas y más</p>
-    </div>
-  </a>
-
-  <a href="products.html?cat=FRUTAS" class="banner link-banner">
-    <div class="banner-inner">
-      <h2>🍎 Frutas & Verduras</h2>
-      <p>Frescura directa del productor</p>
-    </div>
-  </a>
-</section>
-
-
-  <!-- DESTACADOS -->
-  <main class="productos-destacados">
-    <h2>Productos Destacados</h2>
-    <div class="grid">
-      <div class="producto">
-        <div class="categoria">ROTISERÍA</div>
-        <img src="images/products/pollo.png" alt="Pollo al horno" />
-        <h3>Milanesas</h3>
-        <p class="precio">$170</p>
-        <button class="btn-agregar">Ver más</button>
+  <!-- HERO -->
+  <main class="site-main" id="main">
+    <section class="hero" style="max-width:1200px;margin:28px auto;padding:18px;">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <h1 style="font-size:28px;margin:0 0 8px;color:#fff">Autoservice Liam Yahir — Todo a tu puerta</h1>
+          <p style="color:#ddd;margin:0 0 12px">Delivery 08:00–23:30 · Envío $50 · Gratis desde $1500</p>
+          <div class="hero-ctas">
+            <a class="btn-cta" href="products.html">Ver Catálogo</a>
+            <a class="btn-cta ghost" href="delivery.html">Delivery Info</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <img src="images/local-1.jpg" alt="Local Liam Yahir" style="width:320px;height:160px;object-fit:cover;border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,0.6)">
+        </div>
       </div>
-      <div class="producto">
-        <div class="categoria">FRUTAS</div>
-        <img src="images/products/manzana.png" alt="Manzana Roja" />
-        <h3>Manzana Roja</h3>
-        <p class="precio">$124 / Kg</p>
-        <button class="btn-agregar">Ver más</button>
+    </section>
+
+    <!-- Cajas fijas (Rotisería / Frutas / Delivery) - mostradas como enlaces -->
+    <section class="highlights" style="max-width:1200px;margin:10px auto;display:flex;gap:12px;padding:0 12px;">
+      <a class="highlight-card" href="products.html?cat=ROTISERIA" aria-label="Rotisería Caliente">
+        <div class="hc-title">🔥 Rotisería Caliente</div>
+        <div class="hc-sub">Promos diarias: pollo al horno, milanesas, empanadas</div>
+      </a>
+      <a class="highlight-card" href="products.html?cat=FRUTAS" aria-label="Frutas y Verduras">
+        <div class="hc-title">🍎 Frutas & Verduras</div>
+        <div class="hc-sub">Frescos y ofertas de estación</div>
+      </a>
+      <a class="highlight-card" href="delivery.html" aria-label="Delivery">
+        <div class="hc-title">🚚 Delivery</div>
+        <div class="hc-sub">Envío $50 · Gratis desde $1500</div>
+      </a>
+    </section>
+
+    <!-- Productos Destacados (fijos 3 cajas) -->
+    <section style="max-width:1200px;margin:22px auto;padding:0 12px;">
+      <h2 class="section-title">Productos Destacados</h2>
+      <div id="destacados" class="grid-destacados" aria-live="polite">
+        <!-- Rendered by JS: we will fetch top 3 by mas_vendido or by manual selection -->
       </div>
-      <div class="producto">
-        <div class="categoria">LÁCTEOS</div>
-        <img src="images/products/leche.png" alt="Leche Entera" />
-        <h3>Leche Entera 1L</h3>
-        <p class="precio">$45</p>
-        <button class="btn-agregar">Ver más</button>
-      </div>
-    </div>
+    </section>
+
+    <!-- Productos grid preview (same renderer as products.html) -->
+    <section style="max-width:1200px;margin:26px auto;padding:0 12px;">
+      <h2 class="section-title">Algunas recomendaciones</h2>
+      <div id="productos" class="products-grid"></div>
+    </section>
   </main>
 
-<!-- Contenedor del carrito flotante -->
-<div class="carrito-flotante" id="carrito"></div>
+  <!-- CART PANEL -->
+  <aside id="cart-panel" aria-hidden="true">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:8px;">
+      <h3 style="margin:0;color:#fff">Tu carrito</h3>
+      <button id="cart-close" aria-label="Cerrar carrito">✕</button>
+    </div>
+    <div id="cart-items" style="padding:8px;"></div>
+    <!-- footer created by cart-ui.js -->
+  </aside>
 
-<!-- WhatsApp flotante -->
-<a href="https://wa.me/59892308828" class="whatsapp-float" target="_blank">
-  <img src="images/icons/whatsapp-icon.png" alt="WhatsApp">
-</a>
+  <!-- AUTH MODAL (Ingresar / Registrar) -->
+  <div id="auth-modal" class="modal" aria-hidden="true" style="display:none">
+    <div class="modal-inner">
+      <div class="modal-header">
+        <h3>Ingresar / Registrar</h3>
+        <button onclick="document.getElementById('auth-modal').style.display='none'">✕</button>
+      </div>
+      <div class="tabs">
+        <div class="tab-bar">
+          <button class="tab-btn active" data-tab="login">Ingresar</button>
+          <button class="tab-btn" data-tab="register">Registrar</button>
+        </div>
 
+        <div id="tab-login" class="tab-content">
+          <form id="form-login">
+            <label>Email <input id="login-email" type="email" required></label>
+            <label>Contraseña <input id="login-pass" type="password" required></label>
+            <button type="submit" class="btn">Ingresar</button>
+          </form>
+        </div>
 
-  <!-- FOOTER -->
-  <footer class="footer-neon">
-    <p>© 2025 Autoservice Liam-Yahir · Montevideo · Delivery 08:00-23:30</p>
-    <p>📍 Alejandro Fiol de Pereda 1251 | 📞 <a href="tel:+59892308828">92308828</a></p>
-  </footer>
+        <div id="tab-register" class="tab-content hidden">
+          <form id="form-register">
+            <label>Nombre o Apodo <input id="reg-name" required></label>
+            <label>Dirección <input id="reg-address" required></label>
+            <label>Celular <input id="reg-phone" required></label>
+            <label>Email <input id="reg-email" type="email" required></label>
+            <label>Contraseña <input id="reg-pass" type="password" required></label>
+            <label>Forma de pago
+              <select id="reg-paymethod">
+                <option>EFECTIVO</option>
+                <option>POS</option>
+              </select>
+            </label>
+            <label>Notas (opcional) <input id="reg-notes"></label>
+            <button type="submit" class="btn">Registrar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <script src="js/main.js"></script>
+  <!-- CHECKOUT MODAL -->
+  <div id="checkout-modal" class="modal" aria-hidden="true" style="display:none">
+    <div class="modal-inner">
+      <div class="modal-header">
+        <h3>Finalizar pedido</h3>
+        <button id="checkout-cancel">✕</button>
+      </div>
+      <form id="form-checkout">
+        <label>Nombre <input id="c-name" required></label>
+        <label>Teléfono <input id="c-phone" required></label>
+        <label>Email <input id="c-email" type="email"></label>
+        <label>Dirección <textarea id="c-address" required></textarea></label>
+        <label>Método de pago
+          <select id="c-paymethod">
+            <option>EFECTIVO</option>
+            <option>POS</option>
+          </select>
+        </label>
+        <input type="hidden" id="c-type" value="Invitado">
+        <div style="display:flex;gap:8px;margin-top:10px;">
+          <button type="submit" class="btn primary" id="checkout-whatsapp">Enviar por WhatsApp</button>
+          <button type="button" class="btn" id="checkout-save-local">Guardar local</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- DASHBOARD MODAL -->
+  <div id="dashboard-modal" class="modal" aria-hidden="true" style="display:none">
+    <div class="modal-inner">
+      <div class="modal-header">
+        <h3>Mi cuenta</h3>
+        <button onclick="document.getElementById('dashboard-modal').style.display='none'">✕</button>
+      </div>
+      <div style="padding:12px">
+        <h4>Perfil</h4>
+        <label>Nombre <input id="dash-name"></label>
+        <label>Email <input id="dash-email" type="email"></label>
+        <label>Teléfono <input id="dash-phone"></label>
+        <div style="display:flex;gap:8px;margin-top:8px;">
+          <button id="dash-save" class="btn">Guardar</button>
+          <button id="dash-logout" class="btn">Cerrar sesión</button>
+        </div>
+        <hr>
+        <h4>Historial de pedidos</h4>
+        <div id="dash-orders"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS - order matters -->
+<script defer src="js/config.js"></script>
+<script defer src="js/init-app.js"></script>
+<script defer src="js/data.js"></script>
+<script defer src="js/render-helper.js"></script>
+<script defer src="js/filters.js"></script>
+<script defer src="js/cart-ui.js"></script>
+<script defer src="js/auth-and-checkout.js"></script>
+<script defer src="js/dashboard.js"></script>
+
+  <script>
+    // kick off: render home content
+    document.addEventListener("DOMContentLoaded", async ()=> {
+      try {
+        const products = await window.obtenerProductos();
+        // destacados: preferir mas_vendido === 'si' o true
+        const destacados = products.filter(p => p.mas_vendido === true || (p.mas_vendido+'').toLowerCase()==='si').slice(0,3);
+        const destCont = document.getElementById("destacados");
+        if (destCont) {
+          destCont.innerHTML = destacados.map(p => `
+            <article class="producto destacado-small" data-nombre="${p.nombre}" data-precio="${p.precio}">
+              <div class="card-media"><img src="${p.imagen||'images/products/placeholder.png'}" alt="${p.nombre}"></div>
+              <div class="card-body">
+                <h4>${p.nombre}</h4>
+                <div class="card-price">$${Number(p.precio||0).toFixed(2)}</div>
+                <div style="margin-top:8px">
+                  <button class="btn-agregar" data-nombre="${p.nombre}" data-precio="${p.precio}" data-imagen="${p.imagen||''}" data-cantidad="1">Agregar al Carrito</button>
+                </div>
+              </div>
+            </article>
+          `).join("");
+        }
+        // fill productos preview (first 8)
+        const preview = products.slice(0,8);
+        window.renderProductos(preview, "productos");
+      } catch(e){ console.error(e); }
+    });
+  </script>
 </body>
 </html>

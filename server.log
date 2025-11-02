@@ -1,0 +1,67 @@
+nohup: no se tendrá en cuenta la entrada
+127.0.0.1 - - [02/Nov/2025 04:17:52] "GET /products.html?cat=FRUTAS HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:17:52] "GET /css/neon.css HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:17:52] "GET /js/carrito-animado.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:17:52] "GET /js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:17:52] "GET /js/filters.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:17:52] "GET /js/efecto-luces.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:17:52] "GET /js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:17:52] "GET /js/data.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:17:52] "GET /js/cart.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:17:52] "GET /js/config.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:17:53] code 404, message File not found
+127.0.0.1 - - [02/Nov/2025 04:17:53] "GET /images/products/placeholder.png HTTP/1.1" 404 -
+127.0.0.1 - - [02/Nov/2025 04:18:15] "HEAD /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [02/Nov/2025 04:18:15] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [02/Nov/2025 04:19:15] "GET /products.html?cat=FRUTAS HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:15] "GET /css/neon.css HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:15] "GET /js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:15] "GET /js/carrito-animado.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:15] "GET /js/efecto-luces.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:15] "GET /js/filters.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:15] "GET /js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:15] "GET /js/data.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:15] "GET /js/cart.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:15] "GET /js/config.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:15] code 404, message File not found
+127.0.0.1 - - [02/Nov/2025 04:19:15] "GET /images/products/placeholder.png HTTP/1.1" 404 -
+127.0.0.1 - - [02/Nov/2025 04:19:16] "GET /products.html?cat=FRUTAS HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:16] "GET /css/neon.css HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:16] "GET /js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:16] "GET /js/filters.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:16] "GET /js/carrito-animado.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:16] "GET /js/efecto-luces.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:16] "GET /js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:16] "GET /js/data.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:16] "GET /js/cart.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:16] "GET /js/config.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:17] code 404, message File not found
+127.0.0.1 - - [02/Nov/2025 04:19:17] "GET /images/products/placeholder.png HTTP/1.1" 404 -
+127.0.0.1 - - [02/Nov/2025 04:19:25] "GET /index.html HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:25] "GET /css/neon.css HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:19:25] code 404, message File not found
+127.0.0.1 - - [02/Nov/2025 04:19:25] "GET /images/products/pollo.png HTTP/1.1" 404 -
+127.0.0.1 - - [02/Nov/2025 04:19:25] code 404, message File not found
+127.0.0.1 - - [02/Nov/2025 04:19:25] "GET /images/products/manzana.png HTTP/1.1" 404 -
+127.0.0.1 - - [02/Nov/2025 04:19:25] code 404, message File not found
+127.0.0.1 - - [02/Nov/2025 04:19:25] "GET /images/products/leche.png HTTP/1.1" 404 -
+127.0.0.1 - - [02/Nov/2025 04:19:25] "GET /js/main.js HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:21:13] "HEAD /js/init-app.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Nov/2025 04:21:13] "HEAD /js/render-helper.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Nov/2025 04:21:13] "HEAD /js/filters.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Nov/2025 04:21:13] "HEAD /js/cart-ui.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Nov/2025 04:21:13] "HEAD /js/auth-and-checkout.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Nov/2025 04:21:13] "HEAD /js/data.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Nov/2025 04:21:38] "HEAD /sw.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Nov/2025 04:22:27] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [02/Nov/2025 04:22:44] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [02/Nov/2025 04:26:35] "GET /css/neon.css HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:26:44] "GET /index.html HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:26:44] "GET /css/neon.css HTTP/1.1" 304 -
+127.0.0.1 - - [02/Nov/2025 04:26:44] code 404, message File not found
+127.0.0.1 - - [02/Nov/2025 04:26:44] "GET /images/products/pollo.png HTTP/1.1" 404 -
+127.0.0.1 - - [02/Nov/2025 04:26:44] code 404, message File not found
+127.0.0.1 - - [02/Nov/2025 04:26:44] code 404, message File not found
+127.0.0.1 - - [02/Nov/2025 04:26:44] "GET /images/products/manzana.png HTTP/1.1" 404 -
+127.0.0.1 - - [02/Nov/2025 04:26:44] "GET /images/products/leche.png HTTP/1.1" 404 -
+127.0.0.1 - - [02/Nov/2025 04:26:44] "GET /js/main.js HTTP/1.1" 304 -

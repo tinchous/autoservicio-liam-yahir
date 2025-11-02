@@ -1,81 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Catálogo | Autoservice Liam-Yahir</title>
-  <link rel="stylesheet" href="css/neon.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Catálogo — Autoservice Liam Yahir</title>
+  <link rel="stylesheet" href="css/main.css">
 </head>
-
 <body>
-  <header class="header-bar">
-    <div class="logo-area">
-      <img src="images/logo.png" alt="Autoservice Liam-Yahir" class="logo-mini" />
-      <h1>Autoservice <span>Liam-Yahir</span></h1>
+  <!-- header (misma estructura que index) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo/logo.png" alt="Autoservice Liam Yahir" class="brand-logo">
+        <span class="brand-title">Autoservice Liam Yahir</span>
+      </a>
+      <nav class="main-nav" role="navigation">
+        <a href="index.html">Inicio</a>
+        <a href="products.html">CATÁLOGO</a>
+        <a href="delivery.html">Delivery</a>
+        <button id="login-toggle" class="btn-link">Ingresar / Registrar</button>
+      </nav>
+      <div class="header-actions">
+        <button id="cart-toggle" class="cart-toggle">
+          <span class="cart-icon">🛒</span>
+          <span id="cart-count" class="cart-count">0</span>
+        </button>
+        <a class="whatsapp-float" href="https://wa.me/59892308828" target="_blank">
+          <img src="images/icons/whatsapp-icon.png" alt="WhatsApp">
+        </a>
+      </div>
     </div>
-    <nav class="nav-menu">
-      <a href="index.html">Inicio</a>
-      <a href="products.html" class="activo">Catálogo</a>
-      <a href="delivery.html">Delivery</a>
-      <a href="nosotros.html">Nosotros</a>
-      <a href="contacto.html">Contacto</a>
-      <a href="login.html" class="login-link">Ingresar / Registrar</a>
-    </nav>
   </header>
 
-  <main class="container" style="display:flex; gap:20px; align-items:flex-start; padding:20px;">
-  <!-- SIDEBAR FILTROS (vertical) -->
-  <aside id="sidebar-filtros" class="sidebar">
-    <h3>Filtros</h3>
-    <div class="filtro-block">
-      <label>Categoría</label>
-      <select id="filter-categoria">
-        <option value="">Todas</option>
-        <!-- Se llenará dinámicamente -->
-      </select>
-    </div>
+  <div id="mouse-light"></div>
 
-    <div class="filtro-block">
-      <label>Ordenar</label>
-      <select id="filter-orden">
-        <option value="default">Por defecto</option>
-        <option value="az">A → Z</option>
-        <option value="za">Z → A</option>
-        <option value="precio-asc">Precio ↑</option>
-        <option value="precio-desc">Precio ↓</option>
-        <option value="ofertas">Ofertas</option>
-      </select>
-    </div>
+  <main style="max-width:1200px;margin:20px auto;display:flex;gap:18px;padding:0 12px;">
+    <!-- Filters -->
+    <aside id="filters-panel" style="width:280px;"></aside>
 
-    <div style="margin-top:12px;">
-      <button id="btn-limpiar-filtros" class="btn">Limpiar filtros</button>
+    <!-- Product grid -->
+    <section style="flex:1;">
+      <h2 class="section-title" style="color:#fff">Catálogo Completo</h2>
+      <div id="productos" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <!-- cart panel, modals (reuse same markup as index) -->
+  <aside id="cart-panel" aria-hidden="true">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:8px;">
+      <h3 style="margin:0;color:#fff">Tu carrito</h3>
+      <button id="cart-close">✕</button>
     </div>
+    <div id="cart-items" style="padding:8px"></div>
   </aside>
 
-  <!-- ZONA DE PRODUCTOS -->
-  <section style="flex:1;">
-    <h2 class="titulo-seccion">Catálogo Completo</h2>
-    <div id="productos" class="grid"></div>
-  </section>
-</main>
+  <div id="auth-modal" class="modal" aria-hidden="true" style="display:none">...<!-- same structure as index; omit for brevity --></div>
+  <div id="checkout-modal" class="modal" aria-hidden="true" style="display:none">...</div>
+  <div id="dashboard-modal" class="modal" aria-hidden="true" style="display:none">...</div>
 
-<!-- Contenedor del carrito flotante -->
-<div class="carrito-flotante" id="carrito"></div>
+  <!-- scripts -->
+  <script defer src="js/config.js"></script>
+<script defer src="js/init-app.js"></script>
+<script defer src="js/data.js"></script>
+<script defer src="js/render-helper.js"></script>
+<script defer src="js/filters.js"></script>
+<script defer src="js/cart-ui.js"></script>
+<script defer src="js/auth-and-checkout.js"></script>
+<script defer src="js/dashboard.js"></script>
 
-<!-- WhatsApp flotante -->
-<a href="https://wa.me/59892308828" class="whatsapp-float" target="_blank">
-  <img src="images/icons/whatsapp-icon.png" alt="WhatsApp">
-</a>
-
-
-  <footer class="footer-neon">
-    <p>© 2025 Autoservice Liam-Yahir · Todos los derechos reservados</p>
-  </footer>
-
-  <script src="js/main.js"></script>
-<script type="module" src="js/main.js"></script>
-<script type="module" src="js/filters.js"></script>
-<script type="module" src="js/carrito-animado.js"></script>
-<script src="js/efecto-luces.js"></script>
+  <script>
+    // Iniciar filtros y cargar productos
+    document.addEventListener("DOMContentLoaded", async ()=> {
+      await initFilters(); // defined in js/filters.js (uses window.obtenerProductos)
+    });
+  </script>
 </body>
 </html>

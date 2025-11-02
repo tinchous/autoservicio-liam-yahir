@@ -1,0 +1,9 @@
+{
+  "name": "Autoservice Liam-Yahir",
+  "short_name": "Liam-Yahir",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ff3b3b",
+  "icons": [{ "src": "/images/logo.png", "sizes": "512x512", "type": "image/png" }]
+}

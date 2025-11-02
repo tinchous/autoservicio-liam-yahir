@@ -1,48 +1,37 @@
-// data.js (resumen, reemplazar funciones relevantes)
+// js/data.js
 import { CONFIG } from "./config.js";
 
-export async function obtenerProductos() {
+export async function obtenerProductosRaw(){
+  const range = CONFIG.RANGE_PRODUCTOS || "Productos!A:J";
+  const url = `https://sheets.googleapis.com/v4/spreadsheets/${CONFIG.SHEET_ID}/values/${encodeURIComponent(range)}?key=${CONFIG.API_KEY}`;
+  const res = await fetch(url);
+  const json = await res.json();
+  return json;
+}
+
+// devuelve array de objetos normalizados
+export async function obtenerProductos(){
   try {
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${CONFIG.SHEET_ID}/values/${CONFIG.RANGE_PRODUCTOS}?key=${CONFIG.API_KEY}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    if (!data.values || data.values.length < 2) return [];
-    const [headers, ...rows] = data.values;
-    const lista = rows.map(r => {
+    const json = await obtenerProductosRaw();
+    const rows = json.values || [];
+    if (rows.length < 2) return [];
+    const headers = rows[0].map(h => (h||'').toString().trim());
+    const out = rows.slice(1).map(r => {
       const obj = {};
-      headers.forEach((h,i)=> obj[h.toLowerCase()] = r[i] ?? "");
-      return {
-        nombre: obj["nombre"] || obj["producto"] || "Sin nombre",
-        precio: Number((obj["precio"]||"0").replace(/[^\d.]/g,"")) || 0,
-        imagen: obj["imagen"] || "images/products/placeholder.png",
-        categoria: (obj["categoria"] || "OTROS").toUpperCase(),
-        oferta: (obj["oferta"] || "").toLowerCase() === "si"
-      };
+      headers.forEach((h,i)=> obj[h] = (r[i] !== undefined ? r[i] : ""));
+      // normalizaciones
+      obj.precio = Number(obj.precio || 0);
+      obj.oferta = String(obj.oferta || "").toLowerCase() === "si" || obj.oferta === true;
+      obj.nuevo = String(obj.nuevo || "").toLowerCase() === "si" || obj.nuevo === true;
+      obj.mas_vendido = String(obj.mas_vendido || "").toLowerCase() === "si" || obj.mas_vendido === true;
+      obj.imagen = obj.imagen || "images/products/placeholder.png";
+      return obj;
     });
-    return lista;
-  } catch (e) {
-    console.error("Error cargando productos:", e);
+    return out;
+  } catch(e){
+    console.error("obtenerProductos error", e);
     return [];
   }
 }
 
-export function renderProductos(lista) {
-  const cont = document.getElementById("productos");
-  if (!cont) return;
-  cont.innerHTML = lista.map(p => `
-    <div class="producto" data-nombre="${escapeHtml(p.nombre)}" data-precio="${p.precio}" data-imagen="${p.imagen}" data-categoria="${p.categoria}">
-      <div class="categoria">${p.categoria}</div>
-      <img src="${p.imagen}" alt="${escapeHtml(p.nombre)}">
-      <h3>${escapeHtml(p.nombre)}</h3>
-      <div class="precio">$${p.precio}</div>
-      <div class="cantidad">
-        <button class="menos">−</button>
-        <input type="number" min="1" value="1" />
-        <button class="mas">+</button>
-      </div>
-      <button class="btn-agregar">Agregar al Carrito</button>
-    </div>
-  `).join("");
-}
-
-function escapeHtml(s){ return (s+'').replace(/[&<>"']/g, m=> ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+window.obtenerProductos = obtenerProductos; // fácil acceso global
