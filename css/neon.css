@@ -313,3 +313,35 @@ body {
   animation: flyToCart 1s ease-in-out forwards;
   filter: drop-shadow(0 0 15px #ff00ff);
 }
+/* ==========================================================
+   💬 NOTIFICACIÓN FLOTANTE NEÓN
+   ========================================================== */
+.notificacion-neon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 60, 0, 0.9);
+  border: 2px solid #ff8c00;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-shadow: 0 0 5px #000;
+  box-shadow: 0 0 15px #ff3b3b;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.4s ease;
+  z-index: 2000;
+}
+
+.notificacion-neon.show {
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: 0 0 20px #ff8c00, 0 0 40px #ff3b3b;
+}
+
+.notificacion-neon span {
+  color: #39ff14;
+  text-shadow: 0 0 5px #39ff14;
+}
