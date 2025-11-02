@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Autoservice Liam-Yahir | Inicio</title>
+  <title>Autoservice Liam Yahir | Inicio</title>
   <link rel="stylesheet" href="css/neon.css" />
 </head>
 
@@ -25,20 +25,30 @@
   </header>
 
   <!-- SECCIONES DESTACADAS -->
-  <section class="banner-destacado">
-    <div class="banner">
-      <h2>🔥 Rotisería Caliente</h2>
-      <p>Milanesas, Empanadas y Tartas todos los días.</p>
-    </div>
-    <div class="banner">
-      <h2>🍎 Frutas & Verduras</h2>
-      <p>Frescura natural directo del productor.</p>
-    </div>
-    <div class="banner">
+  <!-- SECCIÓN DESTACADA (index.html) -->
+<section class="banner-destacado">
+  <a href="delivery.html" class="banner link-banner">
+    <div class="banner-inner">
       <h2>🚚 Delivery</h2>
-      <p>De 08:00 a 23:30 — $50 o GRATIS por compras mayores a $1500.</p>
+      <p>08:00 a 23:30 · $50 · Compras > $1500 envío <strong>GRATIS</strong></p>
     </div>
-  </section>
+  </a>
+
+  <a href="products.html?cat=ROTISERIA" class="banner link-banner">
+    <div class="banner-inner">
+      <h2>🔥 Rotisería Caliente</h2>
+      <p>Milanesas de carne y pollo, Tartas , Empanadas y más</p>
+    </div>
+  </a>
+
+  <a href="products.html?cat=FRUTAS" class="banner link-banner">
+    <div class="banner-inner">
+      <h2>🍎 Frutas & Verduras</h2>
+      <p>Frescura directa del productor</p>
+    </div>
+  </a>
+</section>
+
 
   <!-- DESTACADOS -->
   <main class="productos-destacados">
@@ -47,26 +57,35 @@
       <div class="producto">
         <div class="categoria">ROTISERÍA</div>
         <img src="images/products/pollo.png" alt="Pollo al horno" />
-        <h3>Pollo al Horno</h3>
-        <p class="precio">$390</p>
+        <h3>Milanesas</h3>
+        <p class="precio">$170</p>
         <button class="btn-agregar">Ver más</button>
       </div>
       <div class="producto">
         <div class="categoria">FRUTAS</div>
         <img src="images/products/manzana.png" alt="Manzana Roja" />
         <h3>Manzana Roja</h3>
-        <p class="precio">$98 / Kg</p>
+        <p class="precio">$124 / Kg</p>
         <button class="btn-agregar">Ver más</button>
       </div>
       <div class="producto">
         <div class="categoria">LÁCTEOS</div>
         <img src="images/products/leche.png" alt="Leche Entera" />
         <h3>Leche Entera 1L</h3>
-        <p class="precio">$48</p>
+        <p class="precio">$45</p>
         <button class="btn-agregar">Ver más</button>
       </div>
     </div>
   </main>
+
+<!-- Contenedor del carrito flotante -->
+<div class="carrito-flotante" id="carrito"></div>
+
+<!-- WhatsApp flotante -->
+<a href="https://wa.me/59892308828" class="whatsapp-float" target="_blank">
+  <img src="images/icons/whatsapp-icon.png" alt="WhatsApp">
+</a>
+
 
   <!-- FOOTER -->
   <footer class="footer-neon">

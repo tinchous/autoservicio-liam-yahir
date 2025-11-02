@@ -23,17 +23,59 @@
     </nav>
   </header>
 
-  <main class="productos-destacados">
-    <h2>Catálogo Completo</h2>
-    <div class="grid" id="productos-lista">
-      <!-- productos cargados desde JS -->
+  <main class="container" style="display:flex; gap:20px; align-items:flex-start; padding:20px;">
+  <!-- SIDEBAR FILTROS (vertical) -->
+  <aside id="sidebar-filtros" class="sidebar">
+    <h3>Filtros</h3>
+    <div class="filtro-block">
+      <label>Categoría</label>
+      <select id="filter-categoria">
+        <option value="">Todas</option>
+        <!-- Se llenará dinámicamente -->
+      </select>
     </div>
-  </main>
+
+    <div class="filtro-block">
+      <label>Ordenar</label>
+      <select id="filter-orden">
+        <option value="default">Por defecto</option>
+        <option value="az">A → Z</option>
+        <option value="za">Z → A</option>
+        <option value="precio-asc">Precio ↑</option>
+        <option value="precio-desc">Precio ↓</option>
+        <option value="ofertas">Ofertas</option>
+      </select>
+    </div>
+
+    <div style="margin-top:12px;">
+      <button id="btn-limpiar-filtros" class="btn">Limpiar filtros</button>
+    </div>
+  </aside>
+
+  <!-- ZONA DE PRODUCTOS -->
+  <section style="flex:1;">
+    <h2 class="titulo-seccion">Catálogo Completo</h2>
+    <div id="productos" class="grid"></div>
+  </section>
+</main>
+
+<!-- Contenedor del carrito flotante -->
+<div class="carrito-flotante" id="carrito"></div>
+
+<!-- WhatsApp flotante -->
+<a href="https://wa.me/59892308828" class="whatsapp-float" target="_blank">
+  <img src="images/icons/whatsapp-icon.png" alt="WhatsApp">
+</a>
+
 
   <footer class="footer-neon">
     <p>© 2025 Autoservice Liam-Yahir · Todos los derechos reservados</p>
   </footer>
 
   <script src="js/main.js"></script>
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/filters.js"></script>
+<script type="module" src="js/carrito-animado.js"></script>
+<script src="js/efecto-luces.js"></script>
 </body>
 </html>

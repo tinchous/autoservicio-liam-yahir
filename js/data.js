@@ -1,10 +1,6 @@
-// data.js
+// data.js (resumen, reemplazar funciones relevantes)
 import { CONFIG } from "./config.js";
 
-/**
- * Obtener productos desde Google Sheets (public read)
- * Espera encabezados en la primera fila: nombre, precio, imagen, categoria, stock
- */
 export async function obtenerProductos() {
   try {
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${CONFIG.SHEET_ID}/values/${CONFIG.RANGE_PRODUCTOS}?key=${CONFIG.API_KEY}`;
@@ -14,14 +10,13 @@ export async function obtenerProductos() {
     const [headers, ...rows] = data.values;
     const lista = rows.map(r => {
       const obj = {};
-      headers.forEach((h, i) => obj[h.toLowerCase()] = r[i] ?? "");
-      // normalizar campos
+      headers.forEach((h,i)=> obj[h.toLowerCase()] = r[i] ?? "");
       return {
         nombre: obj["nombre"] || obj["producto"] || "Sin nombre",
-        precio: Number((obj["precio"] || "0").replace(/[^\d.]/g, "")) || 0,
+        precio: Number((obj["precio"]||"0").replace(/[^\d.]/g,"")) || 0,
         imagen: obj["imagen"] || "images/products/placeholder.png",
         categoria: (obj["categoria"] || "OTROS").toUpperCase(),
-        stock: obj["stock"] || ""
+        oferta: (obj["oferta"] || "").toLowerCase() === "si"
       };
     });
     return lista;
@@ -31,35 +26,6 @@ export async function obtenerProductos() {
   }
 }
 
-/**
- * Renderiza las categorías y productos en el DOM
- */
-export async function renderCategoriasYProductos() {
-  const productos = await obtenerProductos();
-  const categorias = [...new Set(productos.map(p => p.categoria))];
-  const contCats = document.getElementById("categorias");
-  const contProds = document.getElementById("productos");
-
-  // categorias
-  if (contCats) {
-    contCats.innerHTML = categorias.map(c => `<button class="cat-btn" data-cat="${c}">${c}</button>`).join("");
-    contCats.querySelectorAll(".cat-btn").forEach(b => {
-      b.addEventListener("click", e => {
-        document.querySelectorAll(".cat-btn").forEach(x=>x.classList.remove("activo"));
-        e.target.classList.add("activo");
-        renderProductos(productos.filter(p=>p.categoria===e.target.dataset.cat));
-      });
-    });
-  }
-
-  // productos (inicio: mostrar todos)
-  if (contProds) renderProductos(productos);
-}
-
-/**
- * renderProductos(lista)
- * Genera las tarjetas que el carrito-animado espera (.producto con estructura interna)
- */
 export function renderProductos(lista) {
   const cont = document.getElementById("productos");
   if (!cont) return;
@@ -79,5 +45,4 @@ export function renderProductos(lista) {
   `).join("");
 }
 
-// util
-function escapeHtml(s){ return (s+'').replace(/[&<>"']/g, function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]; }); }
+function escapeHtml(s){ return (s+'').replace(/[&<>"']/g, m=> ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }

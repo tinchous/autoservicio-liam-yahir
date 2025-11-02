@@ -198,3 +198,24 @@ body {
   .carrito-flotante { right: 12px; left: 12px; width: calc(100% - 24px); bottom: 80px; }
   .whatsapp-float img { width:56px; height:56px; }
 }
+
+/* Títulos en blanco para mejorar visibilidad */
+.productos-destacados h2,
+.titulo-seccion {
+  color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(255,255,255,0.06);
+}
+
+/* Hacer tarjetas menos transparentes para que se vean bien las imágenes */
+.producto {
+  background: rgba(0,0,0,0.90); /* antes 0.65 -> ahora 0.9 */
+  border: 2px solid #ff00ff;
+  padding: 12px;
+}
+
+/* Botones + / - un poco más grandes para móvil */
+.cantidad button { width:36px; height:36px; font-size:1.12rem; }
+
+/* Ajuste caja de banner link para que se vea clickeable */
+.link-banner { text-decoration: none; display: inline-block; }
+.link-banner .banner-inner { padding: 14px; }
